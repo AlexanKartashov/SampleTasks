@@ -6,11 +6,53 @@ namespace TestTask
     {
         static void Main(string[] args)
         {
-            int[] sub = new int[] { 1,6,7,23};
+            int[] sub = new int[] { 1,2,3,4};
+            int[] orig = new int[] {1,2};
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); //false
 
-            int[] orig = new int[] {1,6};
+            sub = new int[] { 1, 2, 3, 4 };
+            orig = new int[] { 1, 2 , 4, 3, 5};
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // false
 
-            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig));
+            sub = new int[] { 1, 2, 3, 4 };
+            orig = new int[] { 1, 2, 3 };
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // false
+
+            sub = new int[] { 1, 2, 3, 4 };
+            orig = new int[] { };
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // false
+
+            sub = new int[] { 1, 2, 3 };
+            orig = new int[] { 5,4,1,2};
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); //false
+
+            sub = new int[] { 1, 2, 3 };
+            orig = new int[] { 1, 2, 4, 3, 5, 1, 2, 6 };
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // false
+
+            sub = new int[] { };
+            orig = new int[] { 1, 2, 3, 4, 5 };
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // true
+
+            sub = new int[] { 1, 2, 3 };
+            orig = new int[] { 1, 2, 4, 4, 5, 1,2,3,6 };
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // true
+
+            sub = new int[] { 1, 2, 3 };
+            orig = new int[] { 1, 2, 3, 1, 2 };
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // true
+
+            sub = new int[] { 1, 2, 3 };
+            orig = new int[] {5, 4, 1, 2, 3, 6, 7 };
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // true
+
+            sub = new int[] { 1, 2, 3 };
+            orig = new int[] { 5, 4, 1, 2, 3};
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // true
+
+            sub = new int[] { 1, 2, 3 };
+            orig = new int[] { 1, 2, 3 };
+            Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // true
 
             Console.ReadLine();
         }
