@@ -10,8 +10,8 @@ namespace TestTask
             int[] orig = new int[] {1,2};
             Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); //false
 
-            sub = new int[] { 1, 2, 3, 4 };
-            orig = new int[] { 1, 2 , 4, 3, 5};
+            sub = new int[] { 20, 10 };
+            orig = new int[] { 20, 20, 10};
             Console.WriteLine(SampleTasks.SampleUtilities.SubArrayIsInArray(sub, orig)); // false
 
             sub = new int[] { 1, 2, 3, 4 };
@@ -84,8 +84,7 @@ namespace SampleTasks
                 }
                 else
                 {
-                    j++;
-                    if (subArray.Length == (j+1))
+                    if (subArray.Length == j)
                     {
                         if (array[i] == subArray[j])
                             return true;
@@ -103,6 +102,7 @@ namespace SampleTasks
                             j = 0;
                         }
                     }
+                    ++j;
                 }
             }
             return false;
